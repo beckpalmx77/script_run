@@ -17,6 +17,7 @@ $databases = [
     'sac_data2',
     'sac_emp',
     'sac_emp_dbs',
+    'sac_lotto',
     'sac_cust'
 ];
 
