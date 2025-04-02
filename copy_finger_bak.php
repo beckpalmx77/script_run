@@ -8,8 +8,8 @@ function runScript()
     global $loop;  // เรียกใช้ตัวแปร loop จากภายนอกฟังก์ชัน
     global $seq_record;
 
-    $conn = null;
-    include 'config/connect_db.php';
+    //$conn = null;
+    //include 'config/connect_db.php';
     date_default_timezone_set('Asia/Bangkok');
     $sourceDir = 'H:/FingerScan/';         // โฟลเดอร์ต้นทาง
     $destinationDir = 'H:/FingerScan/BACKUP/';  // โฟลเดอร์ปลายทาง
@@ -37,9 +37,9 @@ function runScript()
         $end_process = date("Y-m-d H:i:s");
         echo "Loop = " . $loop . " Start Process = " . $start_process . " End Process = " . $end_process . " - " . $seq_record . "\n\r";
         $loop_detail = "Loop = " . $loop . " Start Process = " . $start_process . " End Process = " . $end_process;
-        $sql_insert_log = "INSERT INTO sac_backup_finger_log (detail,start_process,end_process,create_by,seq_record) VALUES (?,?,?,?,?)";
-        $stmt_insert_log = $conn->prepare($sql_insert_log);
-        $stmt_insert_log->execute([$loop_detail, $start_process, $end_process, "System",$seq_record]);
+        //$sql_insert_log = "INSERT INTO sac_backup_finger_log (detail,start_process,end_process,create_by,seq_record) VALUES (?,?,?,?,?)";
+        //$stmt_insert_log = $conn->prepare($sql_insert_log);
+        //$stmt_insert_log->execute([$loop_detail, $start_process, $end_process, "System",$seq_record]);
     } else {
         echo "No .txt files found in the source directory." . "\n\r";
     }
